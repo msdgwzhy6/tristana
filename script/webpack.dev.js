@@ -14,9 +14,9 @@ module.exports = {
         webpackBase.plugins.html,
         webpackBase.plugins.miniCssExtract,
         webpackBase.plugins.optimizeCssAssets,
-        // webpackBase.plugins.bundleAnalyzer
         webpackBase.plugins.progressBarPlugin,
-        webpackBase.plugins.ContextReplacementPlugin
+        // webpackBase.plugins.ContextReplacementPlugin,
+        webpackBase.plugins.bundleAnalyzer
     ],
     // devServer: webpackBase.devServer,
     externals: webpackBase.externals
