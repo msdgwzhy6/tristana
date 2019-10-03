@@ -1,7 +1,6 @@
 const webpackBase = require('./webpack.base.conf');
 
 module.exports = {
-    optimization: webpackBase.optimization,
     // 配置源码显示方式
     devtool: 'eval-source-map',
     mode: 'development',
@@ -10,13 +9,13 @@ module.exports = {
     },
     resolve: webpackBase.resolve,
     module: webpackBase.module,
+    optimization: webpackBase.optimization,
     plugins: [
         webpackBase.plugins.html,
         webpackBase.plugins.miniCssExtract,
         webpackBase.plugins.optimizeCssAssets,
         webpackBase.plugins.progressBarPlugin,
-        // webpackBase.plugins.ContextReplacementPlugin,
-        webpackBase.plugins.bundleAnalyzer
+        webpackBase.plugins.ContextReplacementPlugin
     ],
     // devServer: webpackBase.devServer,
     externals: webpackBase.externals
