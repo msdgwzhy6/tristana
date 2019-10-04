@@ -15,11 +15,11 @@ class Index extends Component {
     }
 
     render() {
-        const { dashboardStore, dashboardStore: { count, table: { list, isLoading } } } = this.props;
+        const { dashboardStore: { table: { list, isLoading } } } = this.props;
         return (
             <section className={styles.dashboard}>
                 <OrderTable list={list} isLoading={isLoading} />
-                <button onClick={() => dashboardStore.changeCount()}>统计{count}</button>
+                {/* <button onClick={() => dashboardStore.changeCount()}>统计{count}</button> */}
             </section>
         );
     }
@@ -53,6 +53,7 @@ const columns = [
     }
 ];
 
+// 订单表格
 function OrderTable({ list, isLoading }) {
     return (
         <Table
