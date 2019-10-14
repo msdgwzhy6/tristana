@@ -20,6 +20,7 @@ class Index extends Component {
             <section className={styles.dashboard}>
                 <OrderTable list={list} isLoading={isLoading} />
                 {/* <button onClick={() => dashboardStore.changeCount()}>统计{count}</button> */}
+                {/* <span className="iconfont history"></span> */}
             </section>
         );
     }
