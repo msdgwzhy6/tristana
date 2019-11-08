@@ -7,8 +7,6 @@ class DashBoardStore {
     constructor() {
         // 这个 autorun 将与当前的命令行实例一起进行垃圾回收
         this.handler = autorun(() => {
-            if(this.count > 2) {
-            }
             // console.log(this.count);
         });
         // 所以，为了避免细微的内存问题，总是调用清理函数..

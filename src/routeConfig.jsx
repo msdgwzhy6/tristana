@@ -2,8 +2,8 @@
 import React, { lazy } from 'react';
 import { Route } from 'react-router-dom';
 
-const Dashboard = lazy(() => import(/* webpackChunkName: "dashboard"*/'./pages/Dashboard/index'));
-const addGoods = lazy(() => import(/* webpackChunkName: "addGoods"*/'./pages/AddGoods/index'));
+const Dashboard = lazy(() => import(/* webpackChunkName: "Dashboard"*/'./pages/Dashboard/index'));
+const addGoods = lazy(() => import(/* webpackChunkName: "AddGoods"*/'./pages/AddGoods/index'));
 const routes = [
     {
         path: '/dashboard',
