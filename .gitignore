@@ -1,4 +1,5 @@
 node_modules
 dist
-config.js
+script/dist
+config
 package-lock.json

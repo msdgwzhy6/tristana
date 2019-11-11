@@ -17,6 +17,7 @@ module.exports = {
         'no-missing-end-of-source-newline': true,
         'selector-pseudo-class-no-unknown': [ true, {
             ignorePseudoClasses: ['global']
-        }]
+        }],
+        'no-descending-specificity': null
     }
 };
