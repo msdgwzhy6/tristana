@@ -148,9 +148,6 @@ module.exports = {
         react: 'React',
         'react-dom': 'ReactDOM',
         redux: 'Redux',
-        'immutable': 'Immutable',
-        // 'moment': 'moment',
-        // '../moment': 'moment',
         'socket.io-client': 'io'
     }
 };
