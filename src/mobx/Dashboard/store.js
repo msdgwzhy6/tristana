@@ -1,17 +1,25 @@
 import { observable, action, runInAction } from 'mobx';
+import BasicLoading, { initLoading } from '../basicLoading';
 import * as api from '../../servers/table';
-class DashBoardStore {
+class DashBoardStore extends BasicLoading {
     @observable table = {};
 
+    @initLoading
     @action
     async getTable() {
-        this.table.isLoading = true;
         const table = await api.getTable();
         runInAction(() => {
-            this.table.isLoading = false;
             this.table.list = table.listData;
         });
-        return true;
+    }
+
+    @initLoading
+    @action
+    async test() {
+        const table = await api.getTable();
+        runInAction(() => {
+            this.table.list = table.listData;
+        });
     }
 }
 

@@ -15,10 +15,10 @@ class Index extends Component {
     }
 
     render() {
-        const { dashboardStore: { table: { list, isLoading } } } = this.props;
+        const { dashboardStore: { table: { list } }, dashboardStore } = this.props;
         return (
             <section className={styles.dashboard}>
-                <OrderTable list={list} isLoading={isLoading} />
+                <OrderTable list={list} isLoading={dashboardStore.isLoading.get('getTable')} />
             </section>
         );
     }
