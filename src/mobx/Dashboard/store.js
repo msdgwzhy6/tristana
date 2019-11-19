@@ -1,7 +1,7 @@
 import { observable, action, runInAction } from 'mobx';
-import BasicLoading, { initLoading } from '../basicLoading';
+import BasicStore, { initLoading } from '../basicStore';
 import * as api from '../../servers/table';
-class DashBoardStore extends BasicLoading {
+class DashBoardStore extends BasicStore {
     @observable table = {};
 
     @initLoading

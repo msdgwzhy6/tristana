@@ -1,6 +1,6 @@
 import { action, observable } from 'mobx';
 
-export default class basicLoading {
+export default class BasicStore {
     @observable isLoading  = observable.map({ });
   
     @action
