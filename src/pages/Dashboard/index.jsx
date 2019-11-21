@@ -25,7 +25,6 @@ class Index extends Component {
         return (
             <section className={styles.dashboard}>
                 <OrderTable list={list} isLoading={dashboardStore.isLoading.get('getTable')} />
-                <button onClick={() => dashboardStore.getTable()}>统计</button>
             </section>
         );
     }
