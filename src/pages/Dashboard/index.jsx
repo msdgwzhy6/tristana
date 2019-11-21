@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
+import { spy } from 'mobx';
 import { Table } from 'antd';
 import * as styles from './index.less';
+
 @inject('dashboardStore')
 @observer
 class Index extends Component {
@@ -12,6 +14,10 @@ class Index extends Component {
     componentDidMount() {
         const { dashboardStore } = this.props;
         dashboardStore.getTable();
+
+        spy(event => {
+            console.log('spy event', event);
+        });
     }
 
     render() {
@@ -19,6 +25,7 @@ class Index extends Component {
         return (
             <section className={styles.dashboard}>
                 <OrderTable list={list} isLoading={dashboardStore.isLoading.get('getTable')} />
+                <button onClick={() => dashboardStore.getTable()}>统计</button>
             </section>
         );
     }
