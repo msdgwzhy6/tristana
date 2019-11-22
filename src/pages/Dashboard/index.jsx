@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import { spy } from 'mobx';
 import { Table } from 'antd';
-import * as styles from './index.less';
+import './index.less';
 
 @inject('dashboardStore')
 @observer
@@ -23,7 +23,7 @@ class Index extends Component {
     render() {
         const { dashboardStore: { table: { list } }, dashboardStore } = this.props;
         return (
-            <section className={styles.dashboard}>
+            <section className="dashboard">
                 <OrderTable list={list} isLoading={dashboardStore.isLoading.get('getTable')} />
             </section>
         );
