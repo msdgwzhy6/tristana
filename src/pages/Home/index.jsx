@@ -10,7 +10,7 @@ import LayoutHeader from '../../components/LayoutHeader/index';
 import Menu from './components/menu';
 import * as stores from '../../mobx/rootStore';
 import routeConfig from '../../routeConfig';
-import * as styles from './index.less';
+import './index.less';
 
 const { Header, Content, Sider } = Layout;
 
@@ -24,7 +24,7 @@ class Index extends Component {
     render() {
         return (
             <Router history={history} {...stores}>
-                <Layout className={styles.homeLayout}>
+                <Layout styleName="homeLayout">
                     <Sider
                         style={{
                             overflow: 'auto',
@@ -33,14 +33,14 @@ class Index extends Component {
                         }}
                         theme="light"
                     >
-                        <div className={styles.logo} />
+                        <div styleName="logo" />
                         <Menu />
                     </Sider>
                     <Layout>
-                        <Header className={styles.header}>
+                        <Header styleName="header">
                             <LayoutHeader />
                         </Header>
-                        <Content className={styles.homeContent}>
+                        <Content styleName="homeContent">
                             <Suspense fallback={<div>Loading...</div>}>
                                 <Switch>
                                     {routeConfig}

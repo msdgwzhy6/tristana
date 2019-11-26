@@ -23,7 +23,7 @@ class Index extends Component {
     render() {
         const { dashboardStore: { table: { list } }, dashboardStore } = this.props;
         return (
-            <section className="dashboard">
+            <section styleName="dashboard">
                 <OrderTable list={list} isLoading={dashboardStore.isLoading.get('getTable')} />
             </section>
         );

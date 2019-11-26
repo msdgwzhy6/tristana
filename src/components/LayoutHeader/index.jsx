@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Avatar, Dropdown, Menu } from 'antd';
-import * as styles from './index.less';
+import './index.less';
 
 const menu = (
     <Menu>
@@ -20,16 +20,16 @@ class Index extends Component {
 
     render() {
         return (
-            <section className={styles.layoutHeader}>
-                <div className={styles.headerLeft}>
+            <section styleName="layoutHeader">
+                <div styleName="headeLeft">
                     订单系统
                 </div>
-                <div className={styles.headerRight}>
-                    <span className={styles.message}>消息</span>
-                    <Dropdown className={styles.dropDown} overlay={menu}>
+                <div styleName="headerRight">
+                    <span styleName="message">消息</span>
+                    <Dropdown styleName="dropDown" overlay={menu}>
                         <div>
-                            <Avatar className={styles.avatar} size={28} icon="user" />
-                            <span className={styles.name}>Faker</span>
+                            <Avatar styleName="avatar" size={28} icon="user" />
+                            <span styleName="name">Faker</span>
                         </div>
                     </Dropdown>
                 </div>

@@ -20,6 +20,7 @@
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.0",
     "babel-plugin-import": "^1.9.1",
+    "babel-plugin-react-css-modules": "^5.2.6",
     "classnames": "^2.2.6",
     "clean-webpack-plugin": "^0.1.19",
     "core-js": "^2.6.9",
