@@ -15,8 +15,8 @@ class Index extends Component {
         const { dashboardStore } = this.props;
         dashboardStore.getTable();
 
-        spy(event => {
-            console.log('spy event', event);
+        spy(() => {
+
         });
     }
 

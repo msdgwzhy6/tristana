@@ -1,3 +1,4 @@
+import { message } from 'antd';
 import { BASE_API } from '../config';
 
 // 合并特定的reducer
@@ -66,6 +67,15 @@ export function isEmpty(value) {
         return true;
     }
     return false;
+}
+
+// 判断返回值是否报错
+export function isResultError (params, hasMessage = true) {
+    if (!isEmpty(params) && params.code == 200) return params.listData;
+    
+    if (!isEmpty(params) && params.code != 200) {
+        if(hasMessage) message.error(params.errInfo);
+    }
 }
 
 // 检测是否为PC端浏览器模式

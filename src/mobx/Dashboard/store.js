@@ -1,5 +1,6 @@
 import { observable, action, runInAction } from 'mobx';
 import BasicStore, { initLoading } from '../basicStore';
+import { isResultError } from '../../utils/index';
 import * as api from '../../servers/table';
 class DashBoardStore extends BasicStore {
     @observable table = {};
@@ -9,16 +10,7 @@ class DashBoardStore extends BasicStore {
     async getTable() {
         const table = await api.getTable();
         runInAction(() => {
-            this.table.list = table.listData;
-        });
-    }
-
-    @initLoading
-    @action
-    async test() {
-        const table = await api.getTable();
-        runInAction(() => {
-            this.table.list = table.listData;
+            this.table.list = isResultError(table);
         });
     }
 }
