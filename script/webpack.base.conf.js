@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
@@ -135,7 +136,9 @@ module.exports = {
         ContextReplacementPlugin: new webpack.ContextReplacementPlugin(
             /moment\/locale$/,
             /zh-cn/
-        )
+        ),
+        // 替换ant moment
+        AntdDayjsWebpackPlugin: new AntdDayjsWebpackPlugin()
     },
     devServer: {
         hot: false,
