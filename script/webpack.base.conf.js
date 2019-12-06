@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
@@ -118,7 +118,7 @@ module.exports = {
             minifyURLs: true
         }),
         // 清理dist包
-        cleanWebpack: new CleanWebpackPlugin(['dist']),
+        cleanWebpack: new CleanWebpackPlugin(),
         // 抽取css
         miniCssExtract: new MiniCssExtractPlugin({
             filename: './css/[name].[hash].css',
