@@ -1,4 +1,4 @@
-import { observable, action, runInAction } from 'mobx';
+import { observable, action, runInAction } from '../../mobx-source/mobx';
 import BasicStore, { initLoading } from '../basicStore';
 import { isResultError } from '../../utils/index';
 import * as api from '../../servers/table';

@@ -1,4 +1,4 @@
-import { observable, action } from 'mobx';
+import { observable, action } from '../../mobx-source/mobx';
 class AddGoodsStore {
     @observable name = 'sun';
 
