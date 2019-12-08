@@ -67,14 +67,12 @@ function createObservable(v, arg2, arg3) {
 }
 const observableFactories = {
     box(value, options) {
-        debugger;
         if (arguments.length > 2)
             incorrectlyUsedAsDecorator("box");
         const o = asCreateObservableOptions(options);
         return new ObservableValue(value, getEnhancerFromOptions(o), o.name, true, o.equals);
     },
     array(initialValues, options) {
-        debugger;
         if (arguments.length > 2)
             incorrectlyUsedAsDecorator("array");
         const o = asCreateObservableOptions(options);

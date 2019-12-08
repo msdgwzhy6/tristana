@@ -60,6 +60,12 @@ class Index extends Component {
                         添加商品
                     </span>
                 </Menu.Item>
+                <Menu.Item key="/counter">
+                    <Icon type="edit" />
+                    <span>
+                        计数器
+                    </span>
+                </Menu.Item>
             </Menu>
         );
     }

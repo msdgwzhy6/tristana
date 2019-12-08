@@ -3,7 +3,8 @@ import React, { lazy } from 'react';
 import { Route } from 'react-router-dom';
 
 const Dashboard = lazy(() => import(/* webpackChunkName: "Dashboard"*/'./pages/Dashboard/index'));
-const addGoods = lazy(() => import(/* webpackChunkName: "AddGoods"*/'./pages/AddGoods/index'));
+const AddGoods = lazy(() => import(/* webpackChunkName: "AddGoods"*/'./pages/AddGoods/index'));
+const Counter = lazy(() => import(/* webpackChunkName: "Counter"*/'./pages/Counter/index'));
 const routes = [
     {
         path: '/dashboard',
@@ -11,7 +12,11 @@ const routes = [
     },
     {
         path: '/add/goods',
-        component: addGoods
+        component: AddGoods
+    },
+    {
+        path: '/counter',
+        component: Counter
     }
 ];
 
