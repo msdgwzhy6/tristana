@@ -40,7 +40,6 @@ function getEnhancerFromOptions(options) {
  * @param v the value which should become observable.
  */
 function createObservable(v, arg2, arg3) {
-    console.log(444, v, arg2, arg3);
     // @observable someProp;
     if (typeof arguments[1] === "string" || typeof arguments[1] === "symbol") {
         return deepDecorator.apply(null, arguments);
@@ -111,7 +110,6 @@ const observableFactories = {
     struct: refStructDecorator
 };
 export const observable = createObservable;
-console.log(333, observable);
 // weird trick to keep our typings nicely with our funcs, and still extend the observable function
 Object.keys(observableFactories).forEach(name => {
     (observable[name] = observableFactories[name])
