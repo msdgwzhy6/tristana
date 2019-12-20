@@ -123,7 +123,7 @@ module.exports = {
         miniCssExtract: new MiniCssExtractPlugin({
             filename: './css/[name].[hash].css',
             chunkFilename: './css/[id].css',
-            ignoreOrder: false
+            ignoreOrder: true
         }),
         namedModules: new webpack.NamedModulesPlugin(),
         // 压缩css
