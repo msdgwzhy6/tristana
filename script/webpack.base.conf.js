@@ -7,6 +7,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
     optimization: {
@@ -138,7 +139,14 @@ module.exports = {
             /zh-cn/
         ),
         // 替换ant moment
-        AntdDayjsWebpackPlugin: new AntdDayjsWebpackPlugin()
+        AntdDayjsWebpackPlugin: new AntdDayjsWebpackPlugin(),
+        CompressionPlugin: new CompressionPlugin({
+            filename: '[path].gz[query]',
+            algorithm: 'gzip',
+            test: /\.js$|\.css$|\.jsx$|\.less$|\.html$/,
+            threshold: 10240,
+            minRatio: 0.8,
+        })
     },
     devServer: {
         hot: false,

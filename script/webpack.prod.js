@@ -25,7 +25,8 @@ const config = {
         webpackBase.plugins.optimizeCssAssets,
         webpackBase.plugins.progressBarPlugin,
         webpackBase.plugins.ContextReplacementPlugin,
-        webpackBase.plugins.AntdDayjsWebpackPlugin
+        webpackBase.plugins.AntdDayjsWebpackPlugin,
+        webpackBase.plugins.CompressionPlugin
     ],
     externals: webpackBase.externals
 };
