@@ -1,83 +1,41 @@
-# 预览地址
-# https://order.downfuture.com/
+# tristana
 
-# 特点
-1. 路由完全匹配导航，包含url输入，js跳转。
-```
-componentDidMount() {
-    const { location: { pathname } } = this.props;
-    this.setState({
-        selectedKeys: [pathname],
-        pathname
-    });
-}
+基于 [mobx](https://github.com/mobxjs/mobx)、[webpack](https://github.com/webpack/webpack) 和 [react-router](https://github.com/ReactTraining/react-router) 的轻量级前端框架。
 
-static getDerivedStateFromProps(props, state) {
-    if(props.location.pathname != state.pathname) {
-        return {
-            pathname: props.location.pathname,
-            selectedKeys: [props.location.pathname]
-        };
-    }
-    return state;
-}
-```
-2. 封装组件Loading，不需要重复写loading判断
-```
-import { action, observable } from 'mobx';
+---
 
-export default class BasicStore {
-    @observable isLoading  = observable.map({ });
-  
-    @action
-    changeLoadingStatus (loadingType, type) {
-        this.isLoading.set(loadingType, type);
-    }
-}
+## 特性
+* **快速上手**，只要会react、mobx、webpack、react-router，快速搭建中后台管理平台。
+* **路由匹配**，包含url输入、js跳转、菜单切换。
+* **封装组件Loading**，不需要重复写组件Loading判断。
+* **完全自定义的cli**，内置mobx、webpack、react-router、classnames、dayjs、eslint等。
 
-// 初始化loading
-export function initLoading(target, key, descriptor) {
-    const oldValue = descriptor.value;
+## 例子
+* [Order System](https://order.downfuture.com/): 简单的订单系统
 
-    descriptor.value = async function(...args) {
-        this.changeLoadingStatus(key, true);
-        let res;
-        try {
-            res = await oldValue.apply(this, args);
-        } catch (error) {
-            // 做一些错误上报之类的处理 
-            throw error;
-        } finally {
-            this.changeLoadingStatus(key, false);
-        }
-        return res;
-    };
-    return descriptor;
-}
-```
-# 环境
-```
-npm ^6.5.0
-node ^11.4.0
-```
-# 启动
-```
-$ git clone https://github.com/xuya227939/react-scaffolding-mobx.git
+### 是否可用于生产环境？
+当然！公司内用于生产环境的项目估计已经有 5+ 。
 
-$ cd react-scaffolding-mobx
+### 是否支持 IE8 ？
+不支持。
+
+## 启动
+```
+$ git clone https://github.com/Cherry-Team/tristana.git
+
+$ cd tristana
 
 $ npm install
 
 $ npm start
 ```
 
-# 部署
+## 部署
 ```
 $ npm run build
 ```
-然后会在script目录下生成dist目录
 
-# 目录结构
+# 推荐的目录结构
 <pre>
 .
 ├── LICENSE
@@ -126,3 +84,7 @@ $ npm run build
 ├── yarn-error.log
 └── yarn.lock
 </pre>
+
+## License
+
+[MIT](https://tldrlegal.com/license/mit-license)
