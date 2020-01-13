@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ConfigProvider } from 'antd';
+import 'dayjs/locale/zh-cn';
+import dayjs from 'dayjs';
 import zh_CN from 'antd/lib/locale-provider/zh_CN';
 import { Provider } from 'mobx-react';
 import { Switch, Router } from 'react-router-dom';
 import { createHashHistory } from 'history';
 import Home from '../src/pages/Home/index';
 import Stores from './mobx/rootStore';
+
 const history = createHashHistory();
+dayjs.locale('zh-cn');
 
 ReactDOM.render(
     <ConfigProvider locale={zh_CN}>
