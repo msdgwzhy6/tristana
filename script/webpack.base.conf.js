@@ -24,11 +24,11 @@ module.exports = {
             cacheGroups: {
                 vendors: {
                     //node_modules里的代码
-                    test:/[\\/]node_modules[\\/]/,
+                    test: /[\\/]node_modules[\\/]/,
                     chunks: 'initial',
-                    name:'vendors', //chunks name
-                    priority:10, //优先级
-                    enforce:true
+                    name: 'vendors', //chunks name
+                    priority: 10, //优先级
+                    enforce: true
                 }
             }
         }
@@ -45,30 +45,6 @@ module.exports = {
             },
             {
                 test: /\.(css|less)$/,
-                exclude: /node_modules/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            importLoaders: 1,
-                            modules: {
-                                localIdentName: '[path][name]__[local]--[hash:base64:5]'
-                            }
-                        }
-                    },
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            plugins: () => [require('autoprefixer')]
-                        }
-                    },
-                    'less-loader'
-                ]
-            },
-            {
-                test: /\.less$/,
-                include: /node_modules/,
                 use: [
                     MiniCssExtractPlugin.loader,
                     {

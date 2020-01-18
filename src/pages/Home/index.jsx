@@ -24,7 +24,7 @@ class Index extends Component {
     render() {
         return (
             <Router history={history} {...stores}>
-                <Layout styleName="homeLayout">
+                <Layout className="homeLayout">
                     <Sider
                         style={{
                             overflow: 'auto',
@@ -33,14 +33,14 @@ class Index extends Component {
                         }}
                         theme="light"
                     >
-                        <div styleName="logo" />
+                        <div className="logo" />
                         <Menu />
                     </Sider>
                     <Layout>
-                        <Header styleName="header">
+                        <Header className="header">
                             <LayoutHeader />
                         </Header>
-                        <Content styleName="homeContent">
+                        <Content className="homeContent">
                             <Suspense fallback={<div>Loading...</div>}>
                                 <Switch>
                                     {routeConfig}

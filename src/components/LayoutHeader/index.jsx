@@ -20,16 +20,16 @@ class Index extends Component {
 
     render() {
         return (
-            <section styleName="layoutHeader">
-                <div styleName="headeLeft">
+            <section className="layoutHeader">
+                <div className="headeLeft">
                     订单系统
                 </div>
-                <div styleName="headerRight">
-                    <span styleName="message">消息</span>
-                    <Dropdown styleName="dropDown" overlay={menu}>
+                <div className="headerRight">
+                    <span className="message">消息</span>
+                    <Dropdown className="dropDown" overlay={menu}>
                         <div>
-                            <Avatar styleName="avatar" size={28} icon="user" />
-                            <span styleName="name">Faker</span>
+                            <Avatar className="avatar" size={28} icon="user" />
+                            <span className="name">Faker</span>
                         </div>
                     </Dropdown>
                 </div>

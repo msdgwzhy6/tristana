@@ -13,7 +13,7 @@ class Index extends Component {
     render() {
         const { counterStore: { obj }, counterStore } = this.props;
         return (
-            <section styleName="counter">
+            <section className="counter">
                 <button onClick={() => counterStore.add()}>+</button>
                 <span>count is: {obj.count}</span>
                 <button onClick={() => counterStore.reduce()}>-</button>

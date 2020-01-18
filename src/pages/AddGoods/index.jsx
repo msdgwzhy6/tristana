@@ -62,7 +62,7 @@ class AddGoods extends Component {
     render() {
         const formProps = this.fieldDecorator();
         return (
-            <section styleName="addGoods">
+            <section className="addGoods">
                 <Form style={{ width: 800 }} {...BASE_LAYOUT.GROD_COL} onSubmit={this.handleSubmit}>
                     <Form.Item label="商品名称">
                         {
