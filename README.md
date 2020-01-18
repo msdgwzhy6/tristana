@@ -35,56 +35,6 @@ $ npm start
 $ npm run build
 ```
 
-# 推荐的目录结构
-<pre>
-.
-├── LICENSE
-├── README.md
-├── package-lock.json
-├── package.json
-├── public
-│   └── index.html
-├── script                             # webpack
-│   ├── webpack.base.conf.js
-│   ├── webpack.dev.js
-│   └── webpack.prod.js
-├── src
-│   ├── components                     # 公共组件层
-│   │   └── LayoutHeader
-│   │       ├── index.jsx
-│   │       └── index.less
-│   ├── config.js                      # 基础配置
-│   ├── index.jsx                      # 入口js
-│   ├── mobx                           # mobx层
-│   │   ├── AddGoods
-│   │   │   └── store.js
-│   │   ├── Dashboard
-│   │   │   └── store.js
-│   │   ├── basicStore.js
-│   │   └── rootStore.js
-│   ├── pages                          # 页面层
-│   │   ├── AddGoods
-│   │   │   ├── index.jsx
-│   │   │   └── index.less
-│   │   ├── Dashboard
-│   │   │   ├── index.jsx
-│   │   │   └── index.less
-│   │   └── Home
-│   │       ├── components
-│   │       │   └── menu.jsx
-│   │       ├── index.jsx
-│   │       └── index.less
-│   ├── request.jsx                    # 网络请求
-│   ├── routeConfig.jsx                # 路由层
-│   ├── servers                        # api层
-│   │   └── table.js
-│   └── utils                          # 工具类
-│       └── index.js
-├── stylelint.config.js
-├── yarn-error.log
-└── yarn.lock
-</pre>
-
 ## License
 
 [MIT](https://tldrlegal.com/license/mit-license)
