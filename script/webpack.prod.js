@@ -17,6 +17,7 @@ const config = {
     },
     resolve: webpackBase.resolve,
     module: webpackBase.module,
+    stats: webpackBase.stats,
     optimization: webpackBase.optimization,
     plugins: [
         webpackBase.plugins.cleanWebpack,

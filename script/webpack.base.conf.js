@@ -10,6 +10,10 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
+    stats: {
+        entrypoints: false,
+        children: false
+    },
     optimization: {
         minimizer: [
             // 压缩js
