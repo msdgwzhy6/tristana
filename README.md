@@ -36,6 +36,12 @@ $ npm start
 $ npm run build
 ```
 
+## 未来
+* **jsx升级TypeScript**
+* **ant-design 5.0.0**
+* **webpack 5.0.0**
+* **React 17.0.0**
+
 ## License
 
 [MIT](https://tldrlegal.com/license/mit-license)
