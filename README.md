@@ -12,6 +12,7 @@
 
 ## 例子
 * [Order System](https://order.downfuture.com/): 简单的订单系统
+* [Count](https://order.downfuture.com/#/counter): 简单计数器
 
 ### 是否可用于生产环境？
 当然！公司内用于生产环境的项目估计已经有 5+ 。
