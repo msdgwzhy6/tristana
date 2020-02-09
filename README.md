@@ -1,11 +1,11 @@
 # tristana
 
-基于 [mobx](https://github.com/mobxjs/mobx)、[webpack](https://github.com/webpack/webpack) 和 [react-router](https://github.com/ReactTraining/react-router) 的轻量级前端框架。
+基于 [Mobx](https://github.com/mobxjs/mobx)、[Webpack](https://github.com/webpack/webpack) 和 [React-Router](https://github.com/ReactTraining/react-router) 的轻量级前端框架。
 
 ---
 
 ## 特性
-* **快速上手**，只要会react、mobx、webpack、react-router，快速搭建中后台管理平台。
+* **快速上手**，没有其它cli这么多概念，只要会React、Mobx、Webpack、React-Router，快速搭建中后台管理平台。
 * **路由匹配**，包含url输入、js跳转、菜单切换。
 * **封装组件Loading**，不需要重复写组件Loading判断。
 * **完全自定义的cli**，内置mobx、webpack、react-router、classnames、dayjs、eslint等。
