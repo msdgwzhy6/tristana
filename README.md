@@ -1,6 +1,6 @@
 # Tristana
 
-基于 [React](https://github.com/facebook/react)、[Mobx](https://github.com/mobxjs/mobx)、[Webpack](https://github.com/webpack/webpack) 和 [React-Router](https://github.com/ReactTraining/react-router) 的轻量级前端框架。
+基于 [React](https://github.com/facebook/react)、[Mobx](https://github.com/mobxjs/mobx)、[Webpack](https://github.com/webpack/webpack) 和 [React-Router](https://github.com/ReactTraining/react-router) 的项目模板。
 
 ---
 
