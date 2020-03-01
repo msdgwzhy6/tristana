@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Icon as LegacyIcon } from '@ant-design/compatible';
+import { UserOutlined } from '@ant-design/icons';
 import { Avatar, Dropdown, Menu } from 'antd';
 import './index.less';
 
@@ -29,7 +29,7 @@ class Index extends Component {
                     <span className="message">消息</span>
                     <Dropdown className="dropDown" overlay={menu}>
                         <div>
-                            <Avatar className="avatar" size={28} icon={<LegacyIcon type="user" />} />
+                            <Avatar className="avatar" size={28} icon={<UserOutlined />} />
                             <span className="name">Faker</span>
                         </div>
                     </Dropdown>

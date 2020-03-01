@@ -4,7 +4,8 @@
  */
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import { Icon as LegacyIcon } from '@ant-design/compatible';
+import { HomeOutlined, ShoppingCartOutlined, EditOutlined } from '@ant-design/icons';
+
 import { Menu } from 'antd';
 
 
@@ -50,19 +51,19 @@ class Index extends Component {
                 }}
             >
                 <Menu.Item key="/dashboard">
-                    <LegacyIcon type="home" />
+                    <HomeOutlined />
                     <span>
                         工作台
                     </span>
                 </Menu.Item>
                 <Menu.Item key="/add/goods">
-                    <LegacyIcon type="shopping" />
+                    <ShoppingCartOutlined />
                     <span>
                         添加商品
                     </span>
                 </Menu.Item>
                 <Menu.Item key="/counter">
-                    <LegacyIcon type="edit" />
+                    <EditOutlined />
                     <span>
                         计数器
                     </span>
