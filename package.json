@@ -74,5 +74,17 @@
     "script-name": "babel-node script.js",
     "lint:jsx": "eslint --ext .jsx src && eslint --ext .js src",
     "lint:css": "stylelint --aei .less .css src"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    },
+    "lint-staged": {
+      "**/*.{js,jsx}": [
+        "eslint --fix",
+        "git add"
+      ]
+    }
   }
 }
