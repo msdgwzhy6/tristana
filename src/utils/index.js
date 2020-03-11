@@ -10,7 +10,7 @@ export function getObjReducer(state, payload, target) {
     return Object.assign({}, oldState[target], payload);
 }
 
-// 根据当前域名，获取不同的环境
+// 根据配置，读取不同域名
 export function getApi() {
     return BASE_API;
 }
@@ -18,6 +18,22 @@ export function getApi() {
 // 检查 value 是不是函数
 export function isFunction(value) {
     return Object.prototype.toString.call(value) === '[object Function]';
+}
+
+// 把对象转换成url参数
+export function setUrlParams(params) {
+    if(Object.prototype.toString.call(params) === '[object Object]') {
+        let str = '';
+        Object.keys(params).forEach((item, index) => {
+            if(index == 0) {
+                str += `?${item}=${params[item]}`;
+            } else {
+                str += `&${item}=${params[item]}`;
+            }
+        });
+        return str;
+    }
+
 }
 
 // 获取数据类型，返回结果为 Number、String、Object、Array等

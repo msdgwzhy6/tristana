@@ -1,5 +1,5 @@
 import { message } from 'antd';
-import { getApi } from './utils/index';
+import { getApi, setUrlParams } from './utils/index';
 
 function checkStatus(response) {
     if (response.status >= 200 && response.status < 300) {
@@ -24,8 +24,14 @@ export function request({
         optionsBak.headers = {
             'Content-Type': 'application/json'
         };
+
         if (!(optionsBak.method === 'GET' || optionsBak.method === 'DELETE')) {
             optionsBak.body = JSON.stringify(optionsBak.body);
+        }
+
+        // 把对象转成url参数
+        if(optionsBak.method === 'GET') {
+            url = url + setUrlParams(optionsBak.body);
         }
     }
     return fetch(getApi() + url, optionsBak)

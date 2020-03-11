@@ -46,7 +46,7 @@ class Index extends Component {
                                     {routeConfig}
                                     <Redirect
                                         from="/*"
-                                        to="/dashboard"
+                                        to="/user/login"
                                     />
                                 </Switch>
                             </Suspense>
