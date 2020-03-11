@@ -12,7 +12,7 @@ const config = {
     output: {
         filename: './js/[name].[hash].js',
         hashDigestLength: 7,
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve('./', 'dist'),
         publicPath: './'
     },
     resolve: webpackBase.resolve,
