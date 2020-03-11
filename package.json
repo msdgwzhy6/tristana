@@ -77,8 +77,8 @@
             "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
         },
         "lint-staged": {
-            "src/**/*.{js,jsx}": [
-                "./node_modules/.bin/eslint --fix",
+            "**/*.{js,jsx}": [
+                "eslint --fix",
                 "git add"
             ]
         }
