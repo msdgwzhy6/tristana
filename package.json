@@ -71,18 +71,17 @@
     "webpack-dev-server": "^3.10.1"
   },
   "scripts": {
-    "precommit": "lint-staged",
-    "lint-staged": {
-      "linters": {
-        "src/*.jsx": [
-          "./node_modules/.bin/eslint --fix",
-          "git add"
-        ],
-        "src/*.less": [
-          "./node_modules/.bin/stylelint --fix",
-          "git add"
-        ]
-      }
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged",
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+        },
+        "lint-staged": {
+            "src/**/*.{js,jsx}": [
+                "./node_modules/.bin/eslint --fix",
+                "git add"
+            ]
+        }
     },
     "start": "cross-env NODE_ENV=development webpack-dev-server --open --config script/webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config script/webpack.prod.js",
