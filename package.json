@@ -71,23 +71,24 @@
     "webpack-dev-server": "^3.10.1"
   },
   "scripts": {
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged",
-            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-        },
-        "lint-staged": {
-            "**/*.{js,jsx}": [
-                "eslint --fix",
-                "git add"
-            ]
-        }
-    },
+    "precommit": "husky",
     "start": "cross-env NODE_ENV=development webpack-dev-server --open --config script/webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config script/webpack.prod.js",
     "watch": "webpack --watch --config script/webpack.dev.js",
     "script-name": "babel-node script.js",
     "lint:jsx": "eslint --ext .jsx src && eslint --ext .js src",
     "lint:css": "stylelint --aei .less .css src"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    },
+    "lint-staged": {
+      "**/*.{js,jsx}": [
+        "eslint --fix",
+        "git add"
+      ]
+    }
   }
 }

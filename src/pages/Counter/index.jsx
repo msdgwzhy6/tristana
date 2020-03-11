@@ -7,7 +7,7 @@ class Index extends Component {
     constructor(props) {
         super(props);
     }
-var aaa = 555;
+var aaa = 666;
 
     render() {
         const { counterStore: { obj }, counterStore } = this.props;
