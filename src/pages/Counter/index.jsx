@@ -8,6 +8,8 @@ class Index extends Component {
         super(props);
     }
 
+    var cc = 456;
+
     render() {
         const { counterStore: { obj }, counterStore } = this.props;
         return (
