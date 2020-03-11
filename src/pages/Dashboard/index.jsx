@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import { spy } from 'mobx';
 import { Table } from 'antd';
 import './index.less';
 
@@ -14,9 +13,6 @@ class Index extends Component {
     componentDidMount() {
         const { dashboardStore } = this.props;
         dashboardStore.getTable();
-        spy(() => {
-
-        });
     }
 
     render() {
