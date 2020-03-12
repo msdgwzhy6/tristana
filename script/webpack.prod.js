@@ -25,8 +25,7 @@ const config = {
         webpackBase.plugins.miniCssExtract,
         webpackBase.plugins.optimizeCssAssets,
         webpackBase.plugins.progressBarPlugin,
-        webpackBase.plugins.ContextReplacementPlugin,
-        webpackBase.plugins.AntdDayjsWebpackPlugin
+        webpackBase.plugins.ContextReplacementPlugin
     ],
     externals: webpackBase.externals
 };

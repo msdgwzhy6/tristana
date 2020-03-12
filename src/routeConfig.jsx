@@ -33,19 +33,17 @@ const routes = [
 ];
 
 const RouteWithSubRoutes = route => {
-    if(route.path == '/dashboard') {
-        return <PrivateRoute exact path={route.path} component={route.component} />;
-    }
+    return <PrivateRoute exact path={route.path} component={route.component} />;
 
-    return (
-        <Route
-            exact
-            path={route.path}
-            render={props => (
-                <route.component {...props} />
-            )}
-        />
-    );
+    // return (
+    //     <Route
+    //         exact
+    //         path={route.path}
+    //         render={props => (
+    //             <route.component {...props} />
+    //         )}
+    //     />
+    // );
 };
 
 const routeConfig = routes.map((route, i) => <RouteWithSubRoutes key={i} {...route} />);

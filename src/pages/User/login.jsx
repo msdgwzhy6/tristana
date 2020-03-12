@@ -3,11 +3,11 @@
  * @Author: Jiang
  * @Date: 2019-06-13 16:45:59
  * @Last Modified by: Jiang
- * @Last Modified time: 2020-03-11 22:01:35
+ * @Last Modified time: 2020-03-12 09:50:46
  */
 
 import React, { Component } from 'react';
-import { Form, Input, Button } from 'antd';
+import { Form, Input, Button, Icon, Checkbox } from 'antd';
 
 class Login extends Component {
     constructor(props) {
@@ -48,7 +48,9 @@ class Login extends Component {
                         message: '请输入密码'
                     }
                 ]
-            })
+            }),
+            // 密码
+            remember: form.getFieldDecorator('remember')
         };
         return formProps;
     }
@@ -60,11 +62,13 @@ class Login extends Component {
                 {
                     <Form
                         onSubmit={this.handleSubmit}
+                        className="login-form"
                     >
                         <Form.Item>
                             {
                                 formProps.loginName(
                                     <Input
+                                        prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
                                         size="large"
                                         addonBefore="账号"
                                         placeholder="请输入账号"
@@ -76,6 +80,7 @@ class Login extends Component {
                             {
                                 formProps.password(
                                     <Input
+                                        prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
                                         size="large"
                                         type="password"
                                         addonBefore="密码"
@@ -85,13 +90,18 @@ class Login extends Component {
                             }
                         </Form.Item>
                         <Form.Item>
-                            <Button
-                                type="primary"
-                                htmlType="submit"
-                                size="large"
-                            >
-                                立即登录
+                            {
+                                formProps.remember(
+                                    <Checkbox>Remember me</Checkbox>
+                                )
+                            }
+                            <a className="login-form-forgot" href="">
+                                Forgot password
+                            </a>
+                            <Button type="primary" htmlType="submit" className="login-form-button">
+                                Log in
                             </Button>
+                            Or <a href="">register now!</a>
                         </Form.Item>
                     </Form>
                 }
