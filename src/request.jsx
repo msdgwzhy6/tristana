@@ -1,45 +1,72 @@
 import { message } from 'antd';
-import { setUrlParams } from './utils/index';
 import { BASE_API } from './config';
+import axios from 'axios';
 
-function checkStatus(response) {
-    if (response.status >= 200 && response.status < 300) {
-        return response;
-    }
-    const error = new Error(response.statusText);
-    error.response = response;
-    throw error;
-}
 
-function parseJSON(response) {
-    return response.json();
-}
+// 创建axios实例
+const service = axios.create({
+    baseURL: BASE_API,
+    timeout: 50000,
+    withCredentials: false, // 跨域携带cookie
+    xsrfCookieName: 'xsrf-token'  //当创建实例的时候配置默认配置
+});  
 
-export function request({
-    url,
-    options
-}) {
-    const optionsBak = options;
-    optionsBak.mode = 'cors';
-    if (!optionsBak.sign) {
-        optionsBak.headers = {
-            'Content-Type': 'application/json'
-        };
 
-        if (!(optionsBak.method === 'GET' || optionsBak.method === 'DELETE')) {
-            optionsBak.body = JSON.stringify(optionsBak.body);
+// 添加请求拦截器，这里面可以配置一下每次请求都需要携带的参数，比如 token，timestamp等等，根据项目自己配置
+service.interceptors.request.use(
+    function(config) {
+        // 每次请求带上token和用户编号
+        // if (store.getters.token) {
+        // config.headers['Token'] = getToken()
+        // config.headers['Authorization'] = store.getters.userId
+        // }
+        config.headers['Content-Type'] = 'application/json;charset=UTF-8';
+        // 每次请求带上时间戳 防刷处理
+        if (config.method === 'get' || config.method === 'delete') {
+            config.params = {
+                ...config.params,
+                timestamp: Date.parse(new Date()) / 1000
+            };
+        } else if (config.method === 'post' || config.method === 'put') {
+            config.data = {
+                ...config.data,
+                timestamp: Date.parse(new Date()) / 1000
+            };
+        } else {
+            config.data = {
+                ...config.data,
+                timestamp: Date.parse(new Date()) / 1000
+            };
         }
-
-        // 把对象转成url参数
-        if(optionsBak.method === 'GET') {
-            url = url + setUrlParams(optionsBak.body);
-        }
+        return config;
+    },
+    function(error) {
+        // 对请求错误做些什么
+        return Promise.reject(error);
     }
-    return fetch(BASE_API + url, optionsBak)
-        .then(checkStatus)
-        .then(parseJSON)
-        .then(data => data)
-        .catch((err) => {
-            message.error(`发送fetch失败${JSON.stringify(err)},方法名：${url}`);
-        });
-}
+);
+
+
+// 添加响应拦截器 ，这里的 response是接收服务器返回后的结果，也可以在这里做一些状态判断
+service.interceptors.response.use(
+    response => {
+        /**
+        * 判断服务器请求是否成功
+        * @method if
+        * @param  {[type]} response [description]
+        * @return {[type]}          [description]
+        */
+        if (response.status !== 200) {
+            return Promise.reject(new Error('网络异常，请稍后重试'));
+        }
+        const res = response.data;
+        if (res.success) {
+            return res;
+        }
+    },
+    error => {
+        return Promise.reject(error);
+    }
+);
+// 提供axios给外部调用
+export default service;
