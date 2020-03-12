@@ -9,6 +9,7 @@ import { Switch, Router, Route } from 'react-router-dom';
 import { createHashHistory } from 'history';
 import Home from '../src/pages/Home/index';
 import Login  from '../src/pages/User/login';
+import './styles/index.less';
 import Stores from './mobx/rootStore';
 
 const history = createHashHistory();

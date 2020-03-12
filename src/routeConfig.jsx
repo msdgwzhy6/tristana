@@ -15,7 +15,7 @@ const routes = [
     },
     {
         // 仪表盘页
-        path: '/dashboard/:id',
+        path: '/dashboard',
         component: Dashboard
     },
     {
