@@ -132,7 +132,6 @@ module.exports = {
     externals: {
         react: 'React',
         'react-dom': 'ReactDOM',
-        redux: 'Redux',
         'socket.io-client': 'io'
     }
 };

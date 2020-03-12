@@ -16,3 +16,5 @@ export const BASE_LAYOUT = {
 // 请求域名
 // export const BASE_API = '//localhost:9000/api/v1/';
 export const BASE_API = 'https://downfuture.com:9000/api/v1/';
+
+export const SOCKET_URL = 'https://developer.ikandy.cn:60310';

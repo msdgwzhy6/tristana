@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 import { Layout } from 'antd';
 import { createHashHistory } from 'history';
+import { agentOnline, onConnect, removeAllListeners, disconnect, agentOffline } from '../../components/Socket/index';
 import LayoutHeader from '../../components/LayoutHeader/index';
 import Menu from './components/menu';
 import * as stores from '../../mobx/rootStore';
@@ -19,6 +20,16 @@ class Index extends Component {
     constructor(props) {
         super(props);
         this.state = { };
+    }
+
+    componentDidMount() {
+        agentOffline();
+        disconnect();
+        removeAllListeners();
+        // socket 注册
+        agentOnline();
+        onConnect();
+        console.log(333);
     }
 
     render() {
