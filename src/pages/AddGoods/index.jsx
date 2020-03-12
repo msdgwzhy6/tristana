@@ -14,8 +14,6 @@ class AddGoods extends Component {
         super(props);
         this.state = { };
     }
-    
-var aaa = 456;
 
     // 表单提交
     handleSubmit = values => {
