@@ -12,13 +12,13 @@ const service = axios.create({
 });  
 
 
-// 添加请求拦截器，这里面可以配置一下每次请求都需要携带的参数，比如 token，timestamp等等，根据项目自己配置
+// 请求拦截器
 service.interceptors.request.use(
     function(config) {
         // 每次请求带上token和用户编号
         // if (store.getters.token) {
-        // config.headers['Token'] = getToken()
-        // config.headers['Authorization'] = store.getters.userId
+        //  config.headers['Token'] = getToken()
+        //  config.headers['Authorization'] = store.getters.userId
         // }
         config.headers['Content-Type'] = 'application/json;charset=UTF-8';
         // 每次请求带上时间戳 防刷处理
@@ -27,12 +27,9 @@ service.interceptors.request.use(
                 ...config.params,
                 timestamp: Date.parse(new Date()) / 1000
             };
-        } else if (config.method === 'post' || config.method === 'put') {
-            config.data = {
-                ...config.data,
-                timestamp: Date.parse(new Date()) / 1000
-            };
-        } else {
+        }
+
+        if (config.method === 'post' || config.method === 'put') {
             config.data = {
                 ...config.data,
                 timestamp: Date.parse(new Date()) / 1000
@@ -41,32 +38,24 @@ service.interceptors.request.use(
         return config;
     },
     function(error) {
-        // 对请求错误做些什么
         return Promise.reject(error);
     }
 );
 
 
-// 添加响应拦截器 ，这里的 response是接收服务器返回后的结果，也可以在这里做一些状态判断
+// 响应拦截器
 service.interceptors.response.use(
     response => {
-        /**
-        * 判断服务器请求是否成功
-        * @method if
-        * @param  {[type]} response [description]
-        * @return {[type]}          [description]
-        */
         if (response.status !== 200) {
+            message.error(`发送request失败${JSON.stringify(response)},方法名：${response.request.responseURL}`);
             return Promise.reject(new Error('网络异常，请稍后重试'));
         }
         const res = response.data;
-        if (res.success) {
-            return res;
-        }
+        return res;
     },
     error => {
         return Promise.reject(error);
     }
 );
-// 提供axios给外部调用
+
 export default service;
