@@ -3,11 +3,12 @@
  * @Author: Jiang
  * @Date: 2019-06-13 16:45:59
  * @Last Modified by: Jiang
- * @Last Modified time: 2020-03-12 10:39:01
+ * @Last Modified time: 2020-03-12 11:23:39
  */
 
 import React, { Component } from 'react';
 import { Form, Input, Button, Icon, Checkbox } from 'antd';
+import './login.less';
 
 class Login extends Component {
     constructor(props) {
