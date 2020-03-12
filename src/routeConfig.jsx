@@ -1,7 +1,5 @@
 // 路由配置文件
 import React, { lazy } from 'react';
-import { Route } from 'react-router-dom';
-
 import PrivateRoute from './components/PrivateRoute/index';
 
 const Dashboard = lazy(() => import(/* webpackChunkName: "Dashboard"*/'./pages/Dashboard/index'));
@@ -17,7 +15,7 @@ const routes = [
     },
     {
         // 仪表盘页
-        path: '/dashboard',
+        path: '/dashboard/:id',
         component: Dashboard
     },
     {

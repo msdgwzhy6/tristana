@@ -1,5 +1,4 @@
 import { message } from 'antd';
-import { BASE_API } from '../config';
 
 // 合并特定的reducer
 export function getObjReducer(state, payload, target) {
@@ -8,11 +7,6 @@ export function getObjReducer(state, payload, target) {
     }
     let oldState = state.toJS();
     return Object.assign({}, oldState[target], payload);
-}
-
-// 根据配置，读取不同域名
-export function getApi() {
-    return BASE_API;
 }
 
 // 检查 value 是不是函数

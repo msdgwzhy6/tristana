@@ -3,7 +3,7 @@
  * @Author: Jiang
  * @Date: 2019-06-13 16:45:59
  * @Last Modified by: Jiang
- * @Last Modified time: 2020-03-12 09:50:46
+ * @Last Modified time: 2020-03-12 10:39:01
  */
 
 import React, { Component } from 'react';
@@ -22,7 +22,7 @@ class Login extends Component {
         form.validateFields((err) => {
             if (!err) {
                 localStorage.token = 'login';
-                history.push('/dashboard');
+                history.push('/dashboard/123');
             }
         });
     }

@@ -11,7 +11,8 @@ class Index extends Component {
     }
 
     componentDidMount() {
-        const { dashboardStore } = this.props;
+        const { dashboardStore, history, match } = this.props;
+        console.log(333, history, match.params.id);
         dashboardStore.getTable();
     }
 

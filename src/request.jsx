@@ -1,5 +1,6 @@
 import { message } from 'antd';
-import { getApi, setUrlParams } from './utils/index';
+import { setUrlParams } from './utils/index';
+import { BASE_API } from './config';
 
 function checkStatus(response) {
     if (response.status >= 200 && response.status < 300) {
@@ -34,7 +35,7 @@ export function request({
             url = url + setUrlParams(optionsBak.body);
         }
     }
-    return fetch(getApi() + url, optionsBak)
+    return fetch(BASE_API + url, optionsBak)
         .then(checkStatus)
         .then(parseJSON)
         .then(data => data)
