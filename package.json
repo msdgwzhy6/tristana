@@ -88,10 +88,6 @@
     "watch": "webpack --watch --config script/webpack.dev.js",
     "script-name": "babel-node script.js",
     "lint:jsx": "eslint --ext .jsx src && eslint --ext .js src",
-    "lint:css": "stylelint --aei .less .css src",
-    "precommit": "lint-staged"
-  },
-  "pre-commit": [
-    "precommit-msg"
-  ]
+    "lint:css": "stylelint --aei .less .css src"
+  }
 }
