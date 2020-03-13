@@ -70,9 +70,18 @@
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.1"
   },
+  "scripts": {
+    "start": "cross-env ENV_LWD=development webpack-dev-server --open --config script/webpack.dev.js",
+    "build:test": "cross-env ENV_LWD=test webpack --config script/webpack.prod.js",
+    "build:prod": "cross-env ENV_LWD=production webpack --config script/webpack.prod.js",
+    "watch": "webpack --watch --config script/webpack.dev.js",
+    "script-name": "babel-node script.js",
+    "lint:jsx": "eslint --ext .jsx src && eslint --ext .js src",
+    "lint:css": "stylelint --aei .less .css src"
+  },
   "husky": {
     "hooks": {
-      "pre-commit": "precommit",
+      "pre-commit": "lint-staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
@@ -81,15 +90,5 @@
       "eslint --fix",
       "git add"
     ]
-  },
-  "scripts": {
-    "start": "cross-env ENV_LWD=development webpack-dev-server --open --config script/webpack.dev.js",
-    "build:test": "cross-env ENV_LWD=test webpack --config script/webpack.prod.js",
-    "build:prod": "cross-env ENV_LWD=production webpack --config script/webpack.prod.js",
-    "watch": "webpack --watch --config script/webpack.dev.js",
-    "script-name": "babel-node script.js",
-    "lint:jsx": "eslint --ext .jsx src && eslint --ext .js src",
-    "lint:css": "stylelint --aei .less .css src",
-    "precommit": "lint-staged"
   }
 }
