@@ -41,10 +41,12 @@
     "file-loader": "^5.0.2",
     "history": "^4.7.2",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^4.2.3",
     "install": "^0.12.2",
     "is-promise": "^2.1.0",
     "less": "^3.8.1",
     "less-loader": "^5.0.0",
+    "lint-staged": "^10.0.8",
     "mini-css-extract-plugin": "^0.8.0",
     "mobx": "^5.13.1",
     "mobx-react": "^6.1.4",
@@ -68,6 +70,17 @@
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.1"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/*.{js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
   "scripts": {
     "start": "cross-env ENV_LWD=development webpack-dev-server --open --config script/webpack.dev.js",
     "build:test": "cross-env ENV_LWD=test webpack --config script/webpack.prod.js",
@@ -76,7 +89,9 @@
     "script-name": "babel-node script.js",
     "lint:jsx": "eslint --ext .jsx src && eslint --ext .js src",
     "lint:css": "stylelint --aei .less .css src",
-    "precommit-msg": "echo 'Pre-commit checks.........' && exit 0"
+    "precommit": "lint-staged"
   },
-  "pre-commit": ["precommit-msg", "lint"]
+  "pre-commit": [
+    "precommit-msg"
+  ]
 }
