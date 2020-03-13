@@ -72,7 +72,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "precommit",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "lint-staged": {
@@ -88,6 +89,7 @@
     "watch": "webpack --watch --config script/webpack.dev.js",
     "script-name": "babel-node script.js",
     "lint:jsx": "eslint --ext .jsx src && eslint --ext .js src",
-    "lint:css": "stylelint --aei .less .css src"
+    "lint:css": "stylelint --aei .less .css src",
+    "precommit": "lint-staged"
   }
 }
