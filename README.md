@@ -33,7 +33,7 @@ $ npm start
 
 ## 部署
 ```
-$ npm run build
+$ npm run build:prod
 ```
 
 ## 未来
