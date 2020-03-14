@@ -59,9 +59,6 @@ module.exports = {
                     {
                         loader: 'less-loader',
                         options: {
-                            modifyVars: {
-                                'primary-color': 'red'
-                            },
                             javascriptEnabled: true
                         }
                     }
@@ -71,8 +68,8 @@ module.exports = {
                 test: /\.(png|svg|jpg|gif|jpeg)$/,
                 loader: 'file-loader',
                 options: {
-                    outputPath: './images',
-                    publicPath: '../images/'
+                    outputPath: './assets/images',
+                    publicPath: '../assets/images/'
                 }
             },
             {
@@ -122,7 +119,10 @@ module.exports = {
             algorithm: 'gzip',
             test: /\.js$|\.css$|\.jsx$|\.less$|\.html$/,
             threshold: 10240,
-            minRatio: 0.8,
+            minRatio: 0.8
+        }),
+        DefinePlugin: new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify(process.env.ENV_LWD)
         })
     },
     devServer: {
@@ -135,7 +135,6 @@ module.exports = {
     externals: {
         react: 'React',
         'react-dom': 'ReactDOM',
-        redux: 'Redux',
         'socket.io-client': 'io'
     }
 };

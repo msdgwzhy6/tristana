@@ -16,7 +16,8 @@ module.exports = {
         webpackBase.plugins.miniCssExtract,
         webpackBase.plugins.optimizeCssAssets,
         webpackBase.plugins.progressBarPlugin,
-        webpackBase.plugins.ContextReplacementPlugin
+        webpackBase.plugins.ContextReplacementPlugin,
+        webpackBase.plugins.DefinePlugin
     ],
     // devServer: webpackBase.devServer,
     externals: webpackBase.externals

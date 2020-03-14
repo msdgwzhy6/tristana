@@ -13,6 +13,6 @@ export const BASE_LAYOUT = {
     }
 };
 
-// 请求域名
-// export const BASE_API = '//localhost:9000/api/v1/';
-export const BASE_API = 'https://downfuture.com:9000/api/v1/';
+export const BASE_API = (process.env.NODE_ENV === 'development' ? 'https://downfuture.com:9000/api/v1/' : (process.env.NODE_ENV == 'test' ? 'https://downfuture.com:9000/api/v1/' : 'https://downfuture.com:9000/api/v1/'));
+
+export const SOCKET_URL = (process.env.NODE_ENV === 'development' ? '//localhost:9000/api/v1/' : (process.env.NODE_ENV == 'test' ? 'https://downfuture.com:9000/api/v1/' : 'https://downfuture.com:9000/api/v1/'));
