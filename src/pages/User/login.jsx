@@ -91,18 +91,26 @@ class Login extends Component {
                             }
                         </Form.Item>
                         <Form.Item>
-                            {
-                                formProps.remember(
-                                    <Checkbox>Remember me</Checkbox>
-                                )
-                            }
-                            <a className="login-form-forgot" href="">
-                                Forgot password
-                            </a>
-                            <Button type="primary" htmlType="submit" className="login-form-button">
+                            <article className="login-form-remember">
+                                {
+                                    formProps.remember(
+                                        <Checkbox>Remember me</Checkbox>
+                                    )
+                                }
+                                <a className="login-form-forgot" href="">
+                                    Forgot password
+                                </a>
+                            </article>
+                        </Form.Item>
+                        <Form.Item>
+                            <Button type="primary" htmlType="submit" className="login-form-button login-btn">
                                 Log in
                             </Button>
-                            Or <a href="">register now!</a>
+                        </Form.Item>
+                        <Form.Item>
+                            <article className="register">
+                                Or&nbsp;<a href="">register now!</a>
+                            </article>
                         </Form.Item>
                     </Form>
                 }
