@@ -85,6 +85,10 @@
     "*.jsx": [
       "eslint --fix",
       "git add"
+    ],
+    "*.less": [
+        "stylelint",
+        "git add"
     ]
   }
 }
