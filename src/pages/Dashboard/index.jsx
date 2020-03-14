@@ -80,7 +80,7 @@ const OrderTable = ({ list, isLoading }) =>  {
 const OrderSearch = (props) => {
     const { handleSubmit } = props;
     return (
-        <section className="search">
+        <section className="dashboard-search">
             <Form
                 layout="inline"
                 name="orderListSearch"
@@ -111,7 +111,7 @@ const OrderSearch = (props) => {
                         <Option value={2}>代下单</Option>
                     </Select>
                 </Form.Item>
-                <section className="button">
+                <section className="dashboard-button">
                     <Form.Item>
                         <Button
                             htmlType="submit"

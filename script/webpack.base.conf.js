@@ -43,7 +43,6 @@ module.exports = {
         rules: [
             {
                 test: /\.(js|jsx)$/,
-                exclude: /(node_modules)/,
                 loader: 'babel-loader'
             },
             {
@@ -81,7 +80,7 @@ module.exports = {
     plugins: {
         // 配置入口页面
         html: new HtmlWebpackPlugin({
-            title: 'react-scaffolding-mobx',
+            title: 'tristana',
             template: 'public/index.html',
             removeComments: true,
             collapseWhitespace: true,
