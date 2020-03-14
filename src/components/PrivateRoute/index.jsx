@@ -3,12 +3,14 @@
  * @Author: Jiang
  * @Date: 2020-03-11 21:42:00
  * @Last Modified by: Jiang
- * @Last Modified time: 2020-03-12 10:09:18
+ * @Last Modified time: 2020-03-14 12:25:54
  */
 
-import React from 'react';
+import React, { lazy } from 'react';
 import { Route, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
+
+const Error = lazy(() => import(/* webpackChunkName: "Error"*/'./../../pages/User/error'));
 
 class PrivateRoute extends React.Component {
     componentWillMount() {
@@ -31,7 +33,7 @@ class PrivateRoute extends React.Component {
                 exact={exact}
                 strict={strict} render={(props) => (<Component {...props} />)}
             />
-        ) : ('请重新登录');
+        ) : <Error />
     }
 }
 

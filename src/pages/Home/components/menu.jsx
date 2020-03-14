@@ -66,6 +66,11 @@ class Index extends Component {
                         计数器
                     </span>
                 </Menu.Item>
+                <Menu.Item key="/error">
+                    <span>
+                        404
+                    </span>
+                </Menu.Item>
             </Menu>
         );
     }

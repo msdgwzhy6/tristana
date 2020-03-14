@@ -6,6 +6,7 @@ const Dashboard = lazy(() => import(/* webpackChunkName: "Dashboard"*/'./pages/D
 const AddGoods = lazy(() => import(/* webpackChunkName: "AddGoods"*/'./pages/AddGoods/index'));
 const Counter = lazy(() => import(/* webpackChunkName: "Counter"*/'./pages/Counter/index'));
 const Login = lazy(() => import(/* webpackChunkName: "Login"*/'./pages/User/login'));
+const Error = lazy(() => import(/* webpackChunkName: "Error"*/'./pages/User/error'));
 
 const routes = [
     {
@@ -27,6 +28,11 @@ const routes = [
         // 计数器页
         path: '/counter',
         component: Counter
+    },
+    {
+        // 错误页面
+        path: '/error',
+        component: Error
     }
 ];
 
