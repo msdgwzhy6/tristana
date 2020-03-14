@@ -31,7 +31,7 @@
         ],
         "no-console": 0,
         "no-debugger": 1,
-        "no-var": 2,
+        "no-var": 0,
         "semi": 2,
         "no-irregular-whitespace": 0,
         "no-trailing-spaces": 0,

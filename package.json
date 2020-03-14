@@ -41,7 +41,6 @@
     "file-loader": "^5.0.2",
     "history": "^4.7.2",
     "html-webpack-plugin": "^3.2.0",
-    "husky": "^4.2.3",
     "install": "^0.12.2",
     "is-promise": "^2.1.0",
     "less": "^3.8.1",
@@ -79,14 +78,10 @@
     "script-name": "babel-node script.js",
     "lint:jsx": "eslint --ext .jsx src && eslint --ext .js src",
     "lint:css": "stylelint --aei .less .css src",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "precommit-msg": "echo 'Pre-commit checks...' && exit 0"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged && npm run build",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
+  "pre-commit": ["precommit", "precommit-msg"],
   "lint-staged": {
     "*.jsx": [
       "eslint --fix",
