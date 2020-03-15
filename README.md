@@ -10,7 +10,7 @@
 * **封装组件Loading**，不需要重复写组件Loading判断。
 * **完全自定义的cli**，内置mobx、webpack、react-router、classnames、dayjs、eslint等。
 
-## 效果
+## 官网效果演示
 * [Tristana](https://order.downfuture.com/)
 
 ### 是否可用于生产环境？
