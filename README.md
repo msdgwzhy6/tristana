@@ -6,9 +6,8 @@
 
 ## 特性
 * **快速上手**，只要会React、Mobx、Webpack、React-Router，快速搭建中后台管理平台。
-* **路由匹配**，包含url输入、js跳转、菜单切换。
+* **路由匹配**，包含URL输入、JS跳转、菜单切换。
 * **封装组件Loading**，不需要重复写组件Loading判断。
-* **完全自定义的cli**，内置mobx、webpack、react-router、classnames、dayjs、eslint等。
 
 ## 官网效果演示
 * [Tristana](https://order.downfuture.com/)
