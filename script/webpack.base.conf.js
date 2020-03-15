@@ -43,7 +43,6 @@ module.exports = {
         rules: [
             {
                 test: /\.(js|jsx)$/,
-                exclude: /(node_modules)/,
                 loader: 'babel-loader'
             },
             {
@@ -81,7 +80,7 @@ module.exports = {
     plugins: {
         // 配置入口页面
         html: new HtmlWebpackPlugin({
-            title: 'react-scaffolding-mobx',
+            title: 'tristana',
             template: 'public/index.html',
             removeComments: true,
             collapseWhitespace: true,
@@ -99,7 +98,7 @@ module.exports = {
         // 抽取css
         miniCssExtract: new MiniCssExtractPlugin({
             filename: './css/[name].[hash].css',
-            chunkFilename: './css/[id].css',
+            chunkFilename: './css/[id].[hash].css',
             ignoreOrder: true
         }),
         namedModules: new webpack.NamedModulesPlugin(),
